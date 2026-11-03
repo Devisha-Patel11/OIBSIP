@@ -1,0 +1,125 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@500&display=swap');
+
+/* Universal Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* Body Styling */
+html,
+body {
+    min-height: 100%;
+}
+
+body {
+    min-height: 100vh;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    background: linear-gradient(45deg, #0a0a0a, #3a4452);
+}
+
+/* Calculator Container */
+.calculator {
+    width: 100%;
+    max-width: 480px;
+    border: 2px solid #8b8d92;
+    padding: 30px;
+    border-radius: 20px;
+    background: transparent;
+    box-shadow: 0 3px 15px rgba(113, 115, 119, 0.5);
+}
+
+/* Display Screen */
+input {
+    width: 100%;
+    border: none;
+    outline: none;
+    padding: 24px 15px;
+    margin-bottom: 20px;
+    background: #828487;
+    box-shadow: 0 3px 15px rgba(113, 115, 119, 0.5);
+    font-size: 40px;
+    text-align: right;
+    color: #ffffff;
+    border-radius: 5px;
+}
+
+input::placeholder {
+    color: #ffffff;
+    opacity: 1;
+}
+
+/* CSS Grid Layout */
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+}
+
+/* Button Styling */
+button {
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    border-radius: 30%;
+    background: #20252c;
+    color: #ffffff;
+    font-size: 20px;
+    box-shadow: -8px -8px 15px rgba(255, 255, 255, 0.12);
+    transition: transform 0.15s ease, filter 0.15s ease;
+}
+
+button:hover {
+    filter: brightness(1.2);
+}
+
+button:active {
+    transform: scale(0.94);
+}
+
+/* Equal Button */
+.equalbtn {
+    background-color: #fb7c14;
+    font-size: 30px;
+}
+
+/* Operator Buttons */
+.operator {
+    color: rgb(206, 234, 206);
+    font-size: 25px;
+    background-color: rgb(34, 44, 34);
+}
+
+/* Clear and Delete Buttons */
+.operator1 {
+    color: rgb(240, 202, 202);
+    background-color: rgb(89, 42, 42);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 480px) {
+    .calculator {
+        padding: 18px;
+    }
+
+    .buttons {
+        gap: 10px;
+    }
+
+    button {
+        font-size: 17px;
+    }
+
+    input {
+        font-size: 32px;
+        padding: 20px 12px;
+    }
+}
