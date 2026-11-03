@@ -6,6 +6,16 @@ A modern, responsive calculator web application built using HTML5, CSS3, and Van
 
 This project is a browser-based calculator designed to perform basic arithmetic operations through an interactive button interface. It features a dark neumorphic-inspired design, responsive layout, and custom JavaScript calculation logic without using `eval()`.
 
+## Author
+
+**Name:** Devisha Patel
+
+**GitHub:**https://github.com/Devisha-Patel11/OIBSIP/tree/main/WebDev-L2-Calculator
+
+**Live Link:**https://devisha-patel11.github.io/OIBSIP/
+
+**LinkedIn:** https://www.linkedin.com/in/devisha-patel-1788bb306/
+
 ## Features
 
 - Addition, subtraction, multiplication and division.
@@ -96,14 +106,6 @@ Through this project, I practised:
 **Level:** Level 2 – Intermediate
 
 **Task:** Task 1 – Calculator
-
-## Author
-
-**Name:** Devisha Patel
-
-**GitHub:** 
-
-**LinkedIn:** https://www.linkedin.com/in/devisha-patel-1788bb306/
 
 ## Acknowledgement
 
