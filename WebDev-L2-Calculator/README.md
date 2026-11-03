@@ -8,9 +8,6 @@ This project is a browser-based calculator designed to perform basic arithmetic 
 
 It features a dark, neumorphic-inspired design, a responsive layout, and a custom JavaScript calculation engine without using JavaScript's `eval()` function.
 
-## 👨‍💻 Author
-
-**Name:** Devisha Patel
 
 **GitHub Repository:**https://github.com/Devisha-Patel11/OIBSIP/tree/main/WebDev-L2-Calculator
 
