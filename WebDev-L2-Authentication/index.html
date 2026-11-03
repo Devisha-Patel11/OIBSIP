@@ -1,0 +1,717 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern login authentication system with registration, validation, and user dashboard.">
+
+    <title>AuthFlow | Secure Account Access</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- =====================================
+         AUTHENTICATION CONTAINER
+    ====================================== -->
+
+    <main class="auth-container" id="auth-container">
+
+        <!-- Left Branding Panel -->
+
+        <section class="auth-visual">
+
+            <div class="visual-content">
+
+                <div class="brand">
+                    <div class="brand-icon">A</div>
+                    <span>AuthFlow</span>
+                </div>
+
+                <div class="visual-message">
+
+                    <span class="visual-tag">
+                        YOUR SECURITY, OUR PRIORITY
+                    </span>
+
+                    <h1>
+                        A simpler way to
+                        <span>secure your digital life.</span>
+                    </h1>
+
+                    <p>
+                        Experience seamless access to your account
+                        with a simple, reliable and user-friendly
+                        authentication system.
+                    </p>
+
+                    <div class="visual-features">
+
+                        <div class="visual-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Simple account management</span>
+                        </div>
+
+                        <div class="visual-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Easy and intuitive interface</span>
+                        </div>
+
+                        <div class="visual-feature">
+                            <span class="feature-check">✓</span>
+                            <span>Personalized user dashboard</span>
+                        </div>
+
+                    </div>
+
+                </div>
+
+                <div class="visual-footer">
+                    <span>© 2026 AuthFlow</span>
+                    <span>Designed for a better experience.</span>
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- Right Authentication Panel -->
+
+        <section class="auth-panel">
+
+            <div class="auth-content">
+
+
+                <!-- =====================================
+                     LOGIN FORM
+                ====================================== -->
+
+                <div class="auth-view active" id="login-view">
+
+                    <div class="auth-heading">
+
+                        <span class="form-label">WELCOME BACK</span>
+
+                        <h2>Sign in to your account</h2>
+
+                        <p>
+                            Enter your details below to access your account.
+                        </p>
+
+                    </div>
+
+
+                    <form id="login-form">
+
+                        <div class="form-group">
+
+                            <label for="login-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="login-email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small class="error-message" id="login-email-error"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <div class="label-row">
+
+                                <label for="login-password">
+                                    Password
+                                </label>
+
+                                <button
+                                    type="button"
+                                    class="text-button"
+                                    id="forgot-password-link"
+                                >
+                                    Forgot password?
+                                </button>
+
+                            </div>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="login-password"
+                                    placeholder="Enter your password"
+                                    autocomplete="current-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="login-password"
+                                    aria-label="Show password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small class="error-message" id="login-password-error"></small>
+
+                        </div>
+
+
+                        <div class="form-options">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="remember-me"
+                                >
+
+                                <span>Remember me</span>
+
+                            </label>
+
+                        </div>
+
+
+                        <button type="submit" class="primary-button">
+                            Sign In
+                            <span>→</span>
+                        </button>
+
+
+                        <div class="form-divider">
+                            <span>New to AuthFlow?</span>
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="show-signup"
+                        >
+                            Create an Account
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     SIGN UP FORM
+                ====================================== -->
+
+                <div class="auth-view" id="signup-view">
+
+                    <div class="auth-heading">
+
+                        <span class="form-label">GET STARTED</span>
+
+                        <h2>Create your account</h2>
+
+                        <p>
+                            Join us today and get started in just a few steps.
+                        </p>
+
+                    </div>
+
+
+                    <form id="signup-form">
+
+
+                        <div class="form-group">
+
+                            <label for="signup-name">
+                                Full Name
+                            </label>
+
+                            <input
+                                type="text"
+                                id="signup-name"
+                                placeholder="Enter your full name"
+                                autocomplete="name"
+                                minlength="2"
+                                maxlength="60"
+                                required
+                            >
+
+                            <small class="error-message" id="signup-name-error"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="signup-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="signup-email"
+                                placeholder="Enter your email address"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small class="error-message" id="signup-email-error"></small>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="signup-password">
+                                Password
+                            </label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="signup-password"
+                                    placeholder="Create a password"
+                                    autocomplete="new-password"
+                                    minlength="8"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="signup-password"
+                                    aria-label="Show password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small class="error-message" id="signup-password-error"></small>
+
+                            <div class="password-strength">
+
+                                <div class="strength-track">
+                                    <div class="strength-fill" id="strength-fill"></div>
+                                </div>
+
+                                <span id="strength-text">
+                                    Password strength
+                                </span>
+
+                            </div>
+
+                        </div>
+
+
+                        <div class="form-group">
+
+                            <label for="confirm-password">
+                                Confirm Password
+                            </label>
+
+                            <div class="password-wrapper">
+
+                                <input
+                                    type="password"
+                                    id="confirm-password"
+                                    placeholder="Confirm your password"
+                                    autocomplete="new-password"
+                                    required
+                                >
+
+                                <button
+                                    type="button"
+                                    class="password-toggle"
+                                    data-target="confirm-password"
+                                    aria-label="Show password"
+                                >
+                                    Show
+                                </button>
+
+                            </div>
+
+                            <small class="error-message" id="confirm-password-error"></small>
+
+                        </div>
+
+
+                        <div class="form-options">
+
+                            <label class="checkbox-label">
+
+                                <input
+                                    type="checkbox"
+                                    id="terms-checkbox"
+                                    required
+                                >
+
+                                <span>
+                                    I agree to the Terms and Conditions.
+                                </span>
+
+                            </label>
+
+                        </div>
+
+
+                        <button type="submit" class="primary-button">
+
+                            Create Account
+                            <span>→</span>
+
+                        </button>
+
+
+                        <div class="form-divider">
+                            <span>Already have an account?</span>
+                        </div>
+
+
+                        <button
+                            type="button"
+                            class="secondary-button"
+                            id="show-login"
+                        >
+                            Sign In Instead
+                        </button>
+
+                    </form>
+
+                </div>
+
+
+
+                <!-- =====================================
+                     FORGOT PASSWORD VIEW
+                ====================================== -->
+
+                <div class="auth-view" id="forgot-view">
+
+                    <div class="back-link-wrapper">
+
+                        <button
+                            type="button"
+                            class="back-button"
+                            id="back-to-login"
+                        >
+                            ← Back to Login
+                        </button>
+
+                    </div>
+
+
+                    <div class="auth-heading">
+
+                        <span class="form-label">ACCOUNT RECOVERY</span>
+
+                        <h2>Forgot your password?</h2>
+
+                        <p>
+                            Enter your registered email address to
+                            continue with account recovery.
+                        </p>
+
+                    </div>
+
+
+                    <form id="forgot-form">
+
+                        <div class="form-group">
+
+                            <label for="forgot-email">
+                                Email Address
+                            </label>
+
+                            <input
+                                type="email"
+                                id="forgot-email"
+                                placeholder="Enter your registered email"
+                                autocomplete="email"
+                                required
+                            >
+
+                            <small class="error-message" id="forgot-email-error"></small>
+
+                        </div>
+
+
+                        <button type="submit" class="primary-button">
+
+                            Continue
+                            <span>→</span>
+
+                        </button>
+
+                    </form>
+
+                    <div class="recovery-note">
+                        <span>ⓘ</span>
+                        This demo interface does not send real password reset emails.
+                    </div>
+
+                </div>
+
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- =====================================
+         USER DASHBOARD
+    ====================================== -->
+
+    <main class="dashboard-container" id="dashboard-container">
+
+        <!-- Dashboard Header -->
+
+        <header class="dashboard-header">
+
+            <div class="dashboard-brand">
+
+                <div class="brand-icon">A</div>
+
+                <span>AuthFlow</span>
+
+            </div>
+
+
+            <div class="dashboard-user">
+
+                <div class="user-avatar" id="user-avatar">
+                    U
+                </div>
+
+                <div class="user-details">
+
+                    <span>Welcome back,</span>
+
+                    <strong id="dashboard-user-name">
+                        User
+                    </strong>
+
+                </div>
+
+                <button
+                    type="button"
+                    class="logout-button"
+                    id="logout-button"
+                >
+                    Logout ↗
+                </button>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- Dashboard Content -->
+
+        <section class="dashboard-content">
+
+            <div class="dashboard-welcome">
+
+                <span class="form-label">
+                    YOUR PERSONAL SPACE
+                </span>
+
+                <h1>
+                    Welcome, <span id="welcome-name">User</span>!
+                </h1>
+
+                <p>
+                    You have successfully signed in to your account.
+                </p>
+
+            </div>
+
+
+            <!-- Dashboard Cards -->
+
+            <div class="dashboard-cards">
+
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-card-icon purple-icon">
+                        ✓
+                    </div>
+
+                    <h3>Account Status</h3>
+
+                    <p class="status-active">
+                        ● Active
+                    </p>
+
+                    <span>Your account is currently active.</span>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-card-icon blue-icon">
+                        ◉
+                    </div>
+
+                    <h3>User Profile</h3>
+
+                    <p id="profile-name">
+                        User
+                    </p>
+
+                    <span id="profile-email">
+                        user@example.com
+                    </span>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="dashboard-card-icon green-icon">
+                        ↗
+                    </div>
+
+                    <h3>Session Status</h3>
+
+                    <p class="status-active">
+                        ● Logged In
+                    </p>
+
+                    <span>Your current session is active.</span>
+
+                </div>
+
+
+            </div>
+
+
+            <!-- Account Information -->
+
+            <div class="account-panel">
+
+                <div class="account-panel-heading">
+
+                    <div>
+                        <h2>Account Information</h2>
+
+                        <p>Your registered account details.</p>
+                    </div>
+
+                    <span class="verified-badge">
+                        ✓ Verified Demo
+                    </span>
+
+                </div>
+
+
+                <div class="account-information">
+
+                    <div class="info-item">
+
+                        <span>Full Name</span>
+
+                        <strong id="account-name">
+                            User
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>Email Address</span>
+
+                        <strong id="account-email">
+                            user@example.com
+                        </strong>
+
+                    </div>
+
+
+                    <div class="info-item">
+
+                        <span>Account Status</span>
+
+                        <strong class="status-active">
+                            Active
+                        </strong>
+
+                    </div>
+
+
+                </div>
+
+            </div>
+
+
+            <footer class="dashboard-footer">
+
+                <p>
+                    © 2026 AuthFlow. All rights reserved.
+                </p>
+
+                <p>
+                    Made with care for a better digital experience.
+                </p>
+
+            </footer>
+
+        </section>
+
+    </main>
+
+
+
+    <!-- Notification Toast -->
+
+    <div
+        class="toast"
+        id="toast"
+        role="status"
+        aria-live="polite"
+    >
+
+        <span class="toast-icon" id="toast-icon">✓</span>
+
+        <span id="toast-message">
+            Notification message
+        </span>
+
+    </div>
+
+
+
+    <!-- JavaScript -->
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
