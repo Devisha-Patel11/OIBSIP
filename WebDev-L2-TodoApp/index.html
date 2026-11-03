@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A clean and simple To-Do application to organize your daily tasks and stay productive.">
+    <title>TaskFlow | Manage Your Tasks</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="app-container">
+
+        <!-- Sidebar -->
+        <aside class="sidebar">
+
+            <div class="brand">
+                <div class="brand-icon">✓</div>
+                <h2>TaskFlow</h2>
+            </div>
+
+            <div class="sidebar-section">
+                <p class="sidebar-label">MENU</p>
+
+                <nav class="sidebar-nav">
+                    <a href="#dashboard" class="nav-item active">
+                        <span class="nav-icon">▦</span>
+                        <span>Dashboard</span>
+                    </a>
+
+                    <a href="#tasks-section" class="nav-item">
+                        <span class="nav-icon">☰</span>
+                        <span>My Tasks</span>
+                    </a>
+
+                    <a href="#tasks-section" class="nav-item" data-filter="pending">
+                        <span class="nav-icon">◷</span>
+                        <span>Pending</span>
+                    </a>
+
+                    <a href="#tasks-section" class="nav-item" data-filter="completed">
+                        <span class="nav-icon">✓</span>
+                        <span>Completed</span>
+                    </a>
+                </nav>
+            </div>
+
+            <div class="sidebar-bottom">
+                <div class="sidebar-note">
+                    <div class="note-icon">✦</div>
+                    <h3>Stay Focused!</h3>
+                    <p>Small steps every day lead to big achievements.</p>
+                </div>
+
+                <div class="sidebar-footer">
+                    <span>TaskFlow</span>
+                    <span>v1.0</span>
+                </div>
+            </div>
+
+        </aside>
+
+
+        <!-- Main Content -->
+        <main class="main-content" id="dashboard">
+
+            <!-- Header -->
+            <header class="top-header">
+
+                <div class="header-title">
+                    <p class="welcome-text">YOUR PERSONAL WORKSPACE</p>
+                    <h1>My Dashboard</h1>
+                    <p class="header-subtitle">Manage your day, one task at a time.</p>
+                </div>
+
+                <div class="header-date">
+                    <div class="date-icon">▦</div>
+                    <div>
+                        <span id="current-day">Today</span>
+                        <strong id="current-date">Loading date...</strong>
+                    </div>
+                </div>
+
+            </header>
+
+
+            <!-- Statistics -->
+            <section class="stats-grid">
+
+                <div class="stat-card total-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Total Tasks</span>
+                        <span class="stat-icon total-icon">▤</span>
+                    </div>
+                    <h2 id="total-count">0</h2>
+                    <p>All your tasks</p>
+                </div>
+
+                <div class="stat-card pending-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Pending</span>
+                        <span class="stat-icon pending-icon">◷</span>
+                    </div>
+                    <h2 id="pending-count">0</h2>
+                    <p>Tasks to complete</p>
+                </div>
+
+                <div class="stat-card completed-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Completed</span>
+                        <span class="stat-icon completed-icon">✓</span>
+                    </div>
+                    <h2 id="completed-count">0</h2>
+                    <p>Tasks finished</p>
+                </div>
+
+                <div class="stat-card progress-card">
+                    <div class="stat-top">
+                        <span class="stat-label">Progress</span>
+                        <span class="stat-icon progress-icon">↗</span>
+                    </div>
+                    <h2 id="progress-percent">0%</h2>
+                    <div class="progress-track">
+                        <div class="progress-fill" id="progress-fill"></div>
+                    </div>
+                </div>
+
+            </section>
+
+
+            <!-- Add Task Section -->
+            <section class="add-task-section">
+
+                <div class="section-heading">
+                    <div>
+                        <h2>Create a New Task</h2>
+                        <p>What would you like to accomplish today?</p>
+                    </div>
+                    <span class="heading-decoration">✦</span>
+                </div>
+
+                <form id="task-form">
+
+                    <div class="task-input-wrapper">
+                        <span class="input-icon">✎</span>
+
+                        <input
+                            type="text"
+                            id="task-input"
+                            placeholder="Enter your task here..."
+                            maxlength="120"
+                            autocomplete="off"
+                            required
+                        >
+
+                        <button type="submit" class="add-task-btn">
+                            <span>+</span>
+                            Add Task
+                        </button>
+                    </div>
+
+                    <div class="task-options">
+
+                        <div class="option-group">
+                            <label for="task-category">Category</label>
+
+                            <select id="task-category">
+                                <option value="Personal">Personal</option>
+                                <option value="Work">Work</option>
+                                <option value="Study">Study</option>
+                                <option value="Other">Other</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label for="task-priority">Priority</label>
+
+                            <select id="task-priority">
+                                <option value="Low">Low</option>
+                                <option value="Medium" selected>Medium</option>
+                                <option value="High">High</option>
+                            </select>
+                        </div>
+
+                        <div class="option-group">
+                            <label for="task-date">Due Date</label>
+
+                            <input
+                                type="date"
+                                id="task-date"
+                            >
+                        </div>
+
+                    </div>
+
+                </form>
+
+            </section>
+
+
+            <!-- Tasks Section -->
+            <section class="tasks-section" id="tasks-section">
+
+                <div class="tasks-header">
+
+                    <div>
+                        <h2>My Tasks</h2>
+                        <p>Keep track of everything you need to do.</p>
+                    </div>
+
+                    <span class="task-counter" id="task-counter">0 Tasks</span>
+
+                </div>
+
+
+                <!-- Search and Filters -->
+                <div class="task-toolbar">
+
+                    <div class="search-box">
+                        <span class="search-icon">⌕</span>
+
+                        <input
+                            type="search"
+                            id="search-input"
+                            placeholder="Search your tasks..."
+                            autocomplete="off"
+                        >
+                    </div>
+
+                    <div class="filter-tabs" role="group" aria-label="Filter tasks">
+
+                        <button class="filter-btn active" data-filter="all" type="button">
+                            All
+                        </button>
+
+                        <button class="filter-btn" data-filter="pending" type="button">
+                            Pending
+                        </button>
+
+                        <button class="filter-btn" data-filter="completed" type="button">
+                            Completed
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <!-- Task List -->
+                <div class="task-list" id="task-list">
+
+                    <!-- JavaScript will dynamically insert task cards here -->
+
+                    <div class="empty-state" id="empty-state">
+
+                        <div class="empty-icon">✓</div>
+
+                        <h3>No tasks yet!</h3>
+
+                        <p>Your task list is empty. Add your first task and start being productive.</p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+            <!-- Footer -->
+            <footer class="main-footer">
+                <p>Made with <span>♥</span> to make your days more productive.</p>
+                <p>© 2026 TaskFlow. All rights reserved.</p>
+            </footer>
+
+        </main>
+
+    </div>
+
+
+    <!-- Edit Task Modal -->
+    <div class="modal-overlay" id="edit-modal" aria-hidden="true">
+
+        <div class="modal">
+
+            <div class="modal-header">
+                <div>
+                    <h2>Edit Task</h2>
+                    <p>Update your task details.</p>
+                </div>
+
+                <button
+                    type="button"
+                    class="modal-close"
+                    id="close-modal"
+                    aria-label="Close edit modal"
+                >
+                    &times;
+                </button>
+            </div>
+
+            <form id="edit-form">
+
+                <input type="hidden" id="edit-task-id">
+
+                <div class="modal-field">
+                    <label for="edit-task-input">Task Name</label>
+                    <input
+                        type="text"
+                        id="edit-task-input"
+                        maxlength="120"
+                        required
+                    >
+                </div>
+
+                <div class="modal-field">
+                    <label for="edit-task-category">Category</label>
+                    <select id="edit-task-category">
+                        <option value="Personal">Personal</option>
+                        <option value="Work">Work</option>
+                        <option value="Study">Study</option>
+                        <option value="Other">Other</option>
+                    </select>
+                </div>
+
+                <div class="modal-field">
+                    <label for="edit-task-priority">Priority</label>
+                    <select id="edit-task-priority">
+                        <option value="Low">Low</option>
+                        <option value="Medium">Medium</option>
+                        <option value="High">High</option>
+                    </select>
+                </div>
+
+                <div class="modal-field">
+                    <label for="edit-task-date">Due Date</label>
+                    <input type="date" id="edit-task-date">
+                </div>
+
+                <div class="modal-actions">
+                    <button type="button" class="cancel-btn" id="cancel-edit">
+                        Cancel
+                    </button>
+
+                    <button type="submit" class="save-btn">
+                        Save Changes
+                    </button>
+                </div>
+
+            </form>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+</html>
