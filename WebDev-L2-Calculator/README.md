@@ -12,7 +12,7 @@ This project is a browser-based calculator designed to perform basic arithmetic 
 
 **GitHub:**https://github.com/Devisha-Patel11/OIBSIP/tree/main/WebDev-L2-Calculator
 
-**Live Link:**https://devisha-patel11.github.io/OIBSIP/
+**Live Link:**https://devisha-patel11.github.io/OIBSIP/WebDev-L2-Calculator/
 
 **LinkedIn:** https://www.linkedin.com/in/devisha-patel-1788bb306/
 
